@@ -1,0 +1,11 @@
+# General
+.DS_Store
+Thumbs.db
+
+# Build cache
+*.pyc
+__pycache__/
+
+# Editor
+.vscode/
+.idea/
