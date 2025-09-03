@@ -15,7 +15,7 @@ void EspAxa::setup() {
 void EspAxa::loop() {
   this->parse_available_();
 
-  const uint32_t now = millis();
+  const uint32_t now = esphome::millis();
   if (this->last_query_ms_ == 0 || now - this->last_query_ms_ > QUERY_INTERVAL_MS) {
     this->last_query_ms_ = now;
     while (this->available()) this->read();
