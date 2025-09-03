@@ -23,9 +23,13 @@ class EspAxaCover : public esphome::cover::Cover, public esphome::Component {
   }
 
   void control(const esphome::cover::CoverCall &call) override {
-    if (call.get_stop().has_value() && *call.get_stop())
+    // get_stop() is a bool in your build; no .has_value()
+    if (call.get_stop()) {
       parent_->cmd_stop();
+      return;
+    }
 
+    // get_position() remains optional<float> in most versions
     if (call.get_position().has_value()) {
       float pos = *call.get_position();
       if (pos >= 0.5f) parent_->cmd_open();
