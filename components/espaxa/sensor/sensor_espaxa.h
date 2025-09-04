@@ -19,7 +19,7 @@ class EspAxaStatusSensor : public esphome::sensor::Sensor, public esphome::Compo
     const int s = parent_->read_status();
     if (s != last_published_) {
       // Publish raw status code (e.g., 210/211/200/502)
-      this->publish_state(static_cast<float>(s));
+      //this->publish_state(static_cast<float>(s));
       last_published_ = s;
     }
   }
