@@ -10,7 +10,7 @@ class EspAxaStatusSensor : public esphome::sensor::Sensor, public esphome::Compo
   void setup() override {}
   void loop() override {
     int s = parent_->read_status();
-    // publish_state(s); // enable when needed
+    publish_state(s); // enable when needed
   }
  private:
   EspAxa *parent_{nullptr};
