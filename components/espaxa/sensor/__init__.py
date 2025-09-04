@@ -4,7 +4,7 @@ from esphome.components import sensor
 
 from .. import espaxa_ns, EspAxa
 
-EspAxaStatusSensor = espaxa_ns.class_("EspAxaStatusSensor", sensor.Sensor)
+EspAxaStatusSensor = espaxa_ns.class_("EspAxaStatusSensor", sensor.Sensor,cg.Component)
 CONF_ESPAXA_ID = "espaxa_id"
 
 CONFIG_SCHEMA = sensor.SENSOR_SCHEMA.extend(
